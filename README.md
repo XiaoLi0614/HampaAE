@@ -111,6 +111,32 @@ Wait for about 5 minutes for all the processes to complete.
 
 Open the produced file in editor to collect results: ```0.txt, 1.txt, 2.txt, 3.txt ```
 
+(Optional) We provid python files to help with selcting all the numebers from the result text. The following command will produce ```collect.txt ``` under the same folder with ```0.txt, 1.txt, 2.txt, 3.txt ```, which includes all the 4 replicas' result withine one line separated by ```/ ```.
+
+Go to the project's root directory: ```/home/user/CoordinationSynthesis```
+
+Run the python file. The arguments are use-case name, number of replicas, callset size and recency bound.
+
+For bank usecase, see the example below.
+
+```
+python getDataBank.py bank 4 125 180
+```
+
+For movie usecase, see the example below.
+
+```
+python getDataMovie.py bank 4 125 8
+```
+After you see the output below, it is safe to examine the ```collect.txt ``` ,
+
+```
+1
+2
+3
+end
+```
+
 ### Dynamic check
 
 All the dynamic check files are stored at the same directory with other output files. For example, for movie use-case with bound 2, the dynamic check files are under directory: ```/home/user/CoordinationSynthesis/updated_run_movie/block/4/125/2_0/movie```
