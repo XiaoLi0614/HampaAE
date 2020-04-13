@@ -119,10 +119,27 @@ The dynamic check files names looks like: ```DynamicTest_1_41.cvc4```
 
 The first number represent the replica number, which is from 0 to 3. The second number is the identifer number, which indicats the order of the dynamic check regarding this replica only.
 
+### Baseline: Sequential Object
+
+For the baseline performance mentioned in our paper, please go through the instructions for **The Blocking Protocol**. This time replcace ```block``` with ```rsm```.
+
+For example: ```/home/user/CoordinationSynthesis/updated_run_bank/block/4/125 ->/home/user/CoordinationSynthesis/updated_run_bank/rsm/4/125```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Before run any instructions from **The Blocking Protocol** and **Baseline: Sequential Object**, make sure there is no remaining alive java process from previous test. Otherwise the ports are occupied.
+
+First check the pid of all processes:
+
+```
+ps aux
+```
+
+If you find any process name begins with ```java -jar```, kill the process.
+
+```
+kill pid_of_previous_java_process
+```
 
 ## Built With
 
