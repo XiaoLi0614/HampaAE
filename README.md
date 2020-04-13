@@ -119,11 +119,15 @@ The dynamic check files names looks like: ```DynamicTest_1_41.cvc4```
 
 The first number represent the replica number, which is from 0 to 3. The second number is the identifer number, which indicats the order of the dynamic check regarding this replica only.
 
-### Baseline: Sequential Object
+### Baseline: Sequential Object (Section 7)
 
-For the baseline performance mentioned in our paper, please go through the instructions for **The Blocking Protocol**. This time replcace ```block``` with ```rsm```.
+For the baseline performance mentioned in our paper, please go through the instructions for **The Blocking Protocol**.
 
-For example: ```/home/user/CoordinationSynthesis/updated_run_bank/block/4/125 ->/home/user/CoordinationSynthesis/updated_run_bank/rsm/4/125```
+For bank use-case: do the experiments under directory: ```/home/user/CoordinationSynthesis/updated_run_bank/rsm/4/125```
+
+For movie use-case: do the experiments under directory: ```/home/user/CoordinationSynthesis/updated_run_movie/rsm/4/125```
+
+Note that there is only one subdirectory ```/0_0```. Because for a sequential object, there is no recency bound on it.
 
 ## Deployment
 
