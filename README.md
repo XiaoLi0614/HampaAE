@@ -24,7 +24,7 @@ vboxmanage import HampaAE.ova
 
 The first step is to conduct static analysis tests on the give use-cases (bankAccount and Movie Reservation). We have already translate the use-cases from our relational language (appendix p3-p4) to corresponding AST node specifications in java.
 
-Go to the directory: /home/user/CoordinationSynthesis/static_analysis
+Go to the directory: ```/home/user/CoordinationSynthesis/static_analysis```
 
 ```
 cd /home/user/CoordinationSynthesis/static_analysis
