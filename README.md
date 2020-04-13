@@ -18,29 +18,9 @@ These instructions will get you a copy of the project up and running on your loc
 vboxmanage import HampaAE.ova
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the test
 
-In this artifact evaluation, we claim the following
-
-### Static analysis test for conflict and dependency relations
+### Static analysis test for conflict and dependency relations (Section 2 & 4)
 
 The first step is to conduct static analysis tests on the give use-cases (bankAccount and Movie Reservation). We have already translate the use-cases from our relational language (appendix p3-p4) to corresponding AST node specifications in java.
 
@@ -63,11 +43,11 @@ Run the bash file for movie use-case: ```MovieStaticAnalysis.sh```
 ```
 You should see three tables, which are the conflict and dependency tables we claimed in the appendix P33.
 
-### Bound inference and optimization
+### Bound inference and optimization (Section 3)
 
 The second step is to input the bound you want on each method. The bound inference will automatically output the optimal bound on the whole object state. This optimal bound makes you buffer more and boost performance. 
 
-### The blocking protocal
+### The blocking protocol (Section 4 & 5)
 
 The third step is to take the first and second step's results as input to run the blocking protocol.
 
