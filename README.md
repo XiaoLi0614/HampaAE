@@ -97,12 +97,7 @@ We have tested the run-time performance of different bounds in their correspondi
 
 The reason to select 2 as the lowest recency bound is the same as the above bank account use-case. The maximum weight of a single call is 2.  
 
-Run the runner.sh file under the bound directory.
-
-```
-./runner.sh
-```
-Copy the output and past back to command line. This command will run 4 processes at the same time to mimic 4 replicas communicating with each other.
+Run the 4 bash files under the bound directory as the following command. This command will run 4 processes at the same time to mimic 4 replicas communicating with each other.
 
 ```
 ./run0-block-4-125.sh & ./run1-block-4-125.sh & ./run2-block-4-125.sh & ./run3-block-4-125.sh
@@ -111,31 +106,25 @@ Wait for about 5 minutes for all the processes to complete.
 
 Open the produced file in editor to collect results: ```0.txt, 1.txt, 2.txt, 3.txt ```
 
-(Optional) We provid python files to help with selcting all the numebers from the result text. The following command will produce ```collect.txt ``` under the same folder with ```0.txt, 1.txt, 2.txt, 3.txt ```, which includes all the 4 replicas' result withine one line separated by ```/ ```.
+(Optional) We provid python files to help with calculating the average from 4 replica's results. The following command will produce ```collect_usecase_channel_recencybound.txt ``` under the ```/home/user/CoordinationSynthesis/statistic``` folder. 
 
 Go to the project's root directory: ```/home/user/CoordinationSynthesis```
 
-Run the python file. The arguments are use-case name, number of replicas, callset size and recency bound.
+Run the python file. The arguments are use-case name, , channel name(```block``` or ```rsm```), number of replicas, callset size and recency bound.
 
 For bank usecase, see the example below.
 
 ```
-python getDataBank.py bank 4 125 180
+python file_parse.py bank block 4 125 21 &>> ./statistic/collect_bank_block_21.txt
 ```
 
 For movie usecase, see the example below.
 
 ```
-python getDataMovie.py bank 4 125 8
+python file_parse.py movie block 4 125 2 &>> ./statistic/collect_movie_block_2.txt
 ```
-After you see the output below, it is safe to examine the ```collect.txt ``` ,
+The output file is stored at the address you specified, eg: ```./statistic/collect_bank_block_21.txt``` from above command.
 
-```
-1
-2
-3
-end
-```
 
 ### Dynamic check
 
