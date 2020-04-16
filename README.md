@@ -151,7 +151,7 @@ Before run any instructions from **The Blocking Protocol** and **Baseline: Seque
 First check the pid of all processes:
 
 ```
-ps aux
+ps aux |grep java
 ```
 
 If you find any process name begins with ```java -jar```, kill the process.
