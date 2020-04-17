@@ -47,6 +47,25 @@ You should see three tables, which are the conflict and dependency tables we cla
 
 The second step is to input the bound you want on each method. The bound inference will automatically output the optimal bound on the whole object state. This optimal bound makes you buffer more and boosts performance. 
 
+To test the bound inference, go to the directory ```/home/user/CoordinationSynthesis/bound_inference```
+
+```
+cd /home/user/CoordinationSynthesis/bound_inference
+```
+
+Run the bash file ```BoundInference.sh```
+
+```
+./BoundInference.sh
+```
+
+The integer arguments are the bound for ```querySpace```, ```queryReservations``` and ```querySpaces``` respectively.
+
+```
+java -jar /home/user/CoordinationSynthesis/bound_inference/CVCAutomation_Xiao_jar/CVCAutomation_Xiao.jar 3 4 6
+```
+Join opeation for relations involves multiplication in our bound constrain deviation process, which falls out of the scope of theory of linear and integer programming. Please notice that arbitary large input arguments are not supported at this time.
+
 ### The Recency-Aware protocol (Section 4 & 5)
 
 The third step is to take the first and second step's results as input to run the recency-aware protocol.
