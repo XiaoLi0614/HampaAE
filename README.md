@@ -6,7 +6,7 @@ bounds. Further, this paper defines coordination-avoidance conditions and the op
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes before you start.
 
 ### Prerequisites
 
@@ -45,11 +45,11 @@ You should see three tables, which are the conflict and dependency tables we cla
 
 ### Bound inference and optimization (Section 3)
 
-The second step is to input the bound you want on each method. The bound inference will automatically output the optimal bound on the whole object state. This optimal bound makes you buffer more and boost performance. 
+The second step is to input the bound you want on each method. The bound inference will automatically output the optimal bound on the whole object state. This optimal bound makes you buffer more and boosts performance. 
 
-### The blocking protocol (Section 4 & 5)
+### The Recency-Aware protocol (Section 4 & 5)
 
-The third step is to take the first and second step's results as input to run the blocking protocol.
+The third step is to take the first and second step's results as input to run the recency-aware protocol.
 
 **Bank account use-case:**
 
@@ -106,6 +106,18 @@ Wait for about 5 minutes for all the processes to complete.
 
 Open the produced file in editor to collect results: ```0.txt, 1.txt, 2.txt, 3.txt ```
 
+Here are some tips to read that result:
+
+1. The results recorded in the ```0.txt, 1.txt, 2.txt, 3.txt ``` have redundancy. You only need the response time for each method in the use-case and the RB, TOB and Ack number to reproduce Fig.7. and Fig.8. Here the ```Ack number``` in the result text file is exactly the ```P2P number``` in Fig.7. (a) and (c).
+
+2. In order to calculate the ratio in Fig.7. (a) and (c),  you need to divid the message number by the base-line recency bound situation. 
+
+In the bank account use-case, the baseline recency bound situation is when the recency bound is 21. 
+
+In the movie use-case, the baseline recency bound situation is when the recency bound is 2. But for the TOB ratio, we are comparing the number of TOB messages sent with the situation where there is no buffer(the blocking protocol in the related work: Hamsaz). In this case, all the method calls in the conflict cover(book and sReserve) will go through TOB. To compute the TOB ratio for movie use-case, divide the TOB number from the experiment results by the the sum of book method number and sReserve number.  
+
+3. We add different query methods(```querySpace```, ```querySpaces``` and ```queryReservations```) in the movie use-case to make it more consistent with other part of our paper. Just treat them as ```query``` will be fine.
+
 (Optional) We provid python files to help with calculating the average from 4 replica's results. The following command will produce ```collect_usecase_channel_recencybound.txt ``` under the ```/home/user/CoordinationSynthesis/statistic``` folder. 
 
 Go to the project's root directory: ```/home/user/CoordinationSynthesis```
@@ -136,7 +148,7 @@ The first number represent the replica number, which is from 0 to 3. The second 
 
 ### Baseline: Sequential Object (Section 7)
 
-For the baseline performance mentioned in our paper, please go through the instructions for **The Blocking Protocol**.
+For the baseline performance mentioned in our paper, please go through the instructions for **The Recency-Aware Protocol**.
 
 For bank use-case: do the experiments under directory: ```/home/user/CoordinationSynthesis/updated_run_bank/rsm/4/125```
 
@@ -144,9 +156,14 @@ For movie use-case: do the experiments under directory: ```/home/user/Coordinati
 
 Note that there is only one subdirectory ```/0_0```. Because for a sequential object, there is no recency bound on it.
 
+The baseline recency bound is the same as we mentioned in **The Recency-Aware Protocol**. To compare with them, go to the directory ```/home/user/CoordinationSynthesis/updated_run_bank/block/4/125/21``` and
+```/home/user/CoordinationSynthesis/updated_run_movie/block/4/125/2``` to find the experiment results.
+
 ## Deployment
 
-Before run any instructions from **The Blocking Protocol** and **Baseline: Sequential Object**, make sure there is no remaining alive java process from previous test. Otherwise the ports are occupied.
+### Before running
+
+Before run any instructions from **The Recency-Aware Protocol** and **Baseline: Sequential Object**, make sure there is no remaining alive java process from previous test. Otherwise the ports are occupied.
 
 First check the pid of all processes:
 
@@ -159,6 +176,10 @@ If you find any process name begins with ```java -jar```, kill the process.
 ```
 kill pid_of_previous_java_process
 ```
+
+### During running process
+
+If you observe any abnormal result for a specific setting, please re-run the experiment under the same setting again later. Preferabley kill some unnecessary processes and release some resource for the experiment. We observe that on the virtual machie, the resources available at that moment may have huge impact on the result.
 
 ## Built With
 
