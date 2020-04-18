@@ -16,6 +16,27 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 https://drive.google.com/file/d/1MrH-1O0AYLx_z4WZVKLHs6a6UoSNpGP0/view?usp=sharing
 ```
+**The settings of the virtual machine are as below**
+
+Operating System: Ubuntu(64-bit)
+
+Base memory: 4096 MB
+
+Video Memory: 128MB
+
+Storage: 32GB
+
+Number of cores: 1
+ 
+**The System I tested and prepared my virtual machine on**
+
+Operating system: Ubuntu 16.04
+
+RAM: 16GB
+
+Number of cores: 8
+
+Frequency: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
 
 
 3. Import the virtual machine image on your local machine.
