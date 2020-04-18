@@ -21,24 +21,24 @@ vboxmanage import HampaAE.ova
 
 ### Main paper
 
-Fig.4 ->  **2. Bound inference and optimization (Section 3)**
+Fig.4 ->  **2. Bound inference and optimization**
 
-Fig.7 ->  **3. The Recency-Aware protocol (Section 4 & 5)**
+Fig.7 ->  **3. The Recency-Aware protocol**
 
-Fig.8 -> **5. Baseline: Sequential Object (Section 7)**
+Fig.8 -> **5. Baseline: Sequential Object**
 
 ### Appendix
 
-2 Bound Inference Example -> **2. Bound inference and optimization (Section 3)**
+2 Bound Inference Example -> **2. Bound inference and optimization**
 
-4 Coordination Conditions -> **1. Static analysis test for conflict and dependency relations (Section 2 & 4)**
+4 Coordination Conditions -> **1. Static analysis test for conflict and dependency relations**
 
-5 Protocol  -> **3. The Recency-Aware protocol (Section 4 & 5)**
+5 Protocol  -> **3. The Recency-Aware protocol**
 
 
 ## Running the test
 
-### 1. Static analysis test for conflict and dependency relations (Section 2 & 4)
+### 1. Static analysis test for conflict and dependency relations
 
 The first step is to conduct static analysis tests on the give use-cases (bankAccount and Movie Reservation). We have already translate the use-cases from our relational language (appendix p3-p4) to corresponding AST node specifications in java.
 
@@ -61,7 +61,7 @@ Run the bash file for movie use-case: ```MovieStaticAnalysis.sh```
 ```
 You should see three tables, which are the conflict and dependency tables we claimed in the appendix P33.
 
-### 2. Bound inference and optimization (Section 3)
+### 2. Bound inference and optimization
 
 The second step is to input the bound you want on each method. The bound inference will automatically output the optimal bound on the whole object state. This optimal bound makes you buffer more and boosts performance. 
 
@@ -84,7 +84,7 @@ java -jar /home/user/CoordinationSynthesis/bound_inference/CVCAutomation_Xiao_ja
 ```
 Join opeation for relations involves multiplication in our bound constrain deviation process, which falls out of the scope of theory of linear and integer programming. Please notice that arbitary large input arguments are not supported at this time.
 
-### 3. The Recency-Aware protocol (Section 4 & 5)
+### 3. The Recency-Aware protocol
 
 The third step is to take the first and second step's results as input to run the recency-aware protocol.
 
@@ -183,7 +183,7 @@ The dynamic check files names looks like: ```DynamicTest_1_41.cvc4```
 
 The first number represent the replica number, which is from 0 to 3. The second number is the identifer number, which indicats the order of the dynamic check regarding this replica only.
 
-### 5. Baseline: Sequential Object (Section 7)
+### 5. Baseline: Sequential Object
 
 For the baseline performance mentioned in our paper, please go through the instructions for **The Recency-Aware Protocol**.
 
