@@ -144,6 +144,7 @@ Wait for about 5 minutes for all the processes to complete.
 Open the produced file in editor to collect results: ```0.txt, 1.txt, 2.txt, 3.txt ```
 
 **3.3 Analysis the result**
+
 Here are some tips to read that result:
 
 1. The results recorded in the ```0.txt, 1.txt, 2.txt, 3.txt ``` have redundancy. You only need the response time for each method in the use-case and the RB, TOB and Ack number to reproduce Fig.7. and Fig.8. Here the ```Ack number``` in the result text file is exactly the ```P2P number``` in Fig.7. (a) and (c).
