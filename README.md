@@ -216,6 +216,14 @@ If you find any process name begins with ```java -jar```, kill the process.
 kill pid_of_previous_java_process
 ```
 
+Clean all the previously produced text files and CVC4 file by the following command
+
+```
+rm *.txt
+rm -R ./bank
+rm -R ./movie
+```
+
 ### During running process
 
 If you observe any abnormal result for a specific setting, please re-run the experiment under the same setting again later. Preferabley kill some unnecessary processes and release some resource for the experiment. We observe that on the virtual machie, the resources available at that moment may have huge impact on the result.
