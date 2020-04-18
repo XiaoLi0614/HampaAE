@@ -143,6 +143,7 @@ Wait for about 5 minutes for all the processes to complete.
 
 Open the produced file in editor to collect results: ```0.txt, 1.txt, 2.txt, 3.txt ```
 
+**3.3 Analysis the result**
 Here are some tips to read that result:
 
 1. The results recorded in the ```0.txt, 1.txt, 2.txt, 3.txt ``` have redundancy. You only need the response time for each method in the use-case and the RB, TOB and Ack number to reproduce Fig.7. and Fig.8. Here the ```Ack number``` in the result text file is exactly the ```P2P number``` in Fig.7. (a) and (c).
@@ -217,6 +218,12 @@ kill pid_of_previous_java_process
 ### During running process
 
 If you observe any abnormal result for a specific setting, please re-run the experiment under the same setting again later. Preferabley kill some unnecessary processes and release some resource for the experiment. We observe that on the virtual machie, the resources available at that moment may have huge impact on the result.
+
+### Experiment results obtained from the virtual machine
+
+We are able to get the same tendency or pattern as we reported in the paper on the virtual machine. You can find the experiment results obtained from the virtual machine(the same one as you get) in the directory ```/home/user/AEResult``` or in this repo. 
+
+The absolute value for response time is not the same as we reported in the paper. Because our reported numbers are obtained from a more powerful cluster. In order to accord with the offline working requirement for CAV artifact evaluation, we use 4 processes to minic 4 nodes on the cluster and make them communicate through localhost address.
 
 ## Built With
 
