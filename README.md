@@ -17,10 +17,28 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 vboxmanage import HampaAE.ova
 ```
+## Road Map
+
+### Main paper
+
+Fig.4 ->  **2. Bound inference and optimization (Section 3)**
+
+Fig.7 ->  **3. The Recency-Aware protocol (Section 4 & 5)**
+
+Fig.8 -> **5. Baseline: Sequential Object (Section 7)**
+
+### Appendix
+
+2 Bound Inference Example -> **2. Bound inference and optimization (Section 3)**
+
+4 Coordination Conditions -> **1. Static analysis test for conflict and dependency relations (Section 2 & 4)**
+
+5 Protocol  -> **3. The Recency-Aware protocol (Section 4 & 5)**
+
 
 ## Running the test
 
-### Static analysis test for conflict and dependency relations (Section 2 & 4)
+### 1. Static analysis test for conflict and dependency relations (Section 2 & 4)
 
 The first step is to conduct static analysis tests on the give use-cases (bankAccount and Movie Reservation). We have already translate the use-cases from our relational language (appendix p3-p4) to corresponding AST node specifications in java.
 
@@ -43,7 +61,7 @@ Run the bash file for movie use-case: ```MovieStaticAnalysis.sh```
 ```
 You should see three tables, which are the conflict and dependency tables we claimed in the appendix P33.
 
-### Bound inference and optimization (Section 3)
+### 2. Bound inference and optimization (Section 3)
 
 The second step is to input the bound you want on each method. The bound inference will automatically output the optimal bound on the whole object state. This optimal bound makes you buffer more and boosts performance. 
 
@@ -66,11 +84,11 @@ java -jar /home/user/CoordinationSynthesis/bound_inference/CVCAutomation_Xiao_ja
 ```
 Join opeation for relations involves multiplication in our bound constrain deviation process, which falls out of the scope of theory of linear and integer programming. Please notice that arbitary large input arguments are not supported at this time.
 
-### The Recency-Aware protocol (Section 4 & 5)
+### 3. The Recency-Aware protocol (Section 4 & 5)
 
 The third step is to take the first and second step's results as input to run the recency-aware protocol.
 
-**Bank account use-case:**
+**3.1 Bank account use-case:**
 
 The callset of bank use-case are under this directory: ```/home/user/CoordinationSynthesis/etc```
 
@@ -100,7 +118,7 @@ Wait for about 5 minutes for all the processes to complete.
 
 Open the produced file in editor to collect results: ```0.txt, 1.txt, 2.txt, 3.txt ```
 
-**Movie reservation use-case:**
+**3.2 Movie reservation use-case:**
 
 The callset of movie use-case are under this directory: ```/home/user/CoordinationSynthesis/etc```
 
@@ -157,7 +175,7 @@ python file_parse.py movie block 4 125 2 &>> ./statistic/collect_movie_block_2.t
 The output file is stored at the address you specified, eg: ```./statistic/collect_bank_block_21.txt``` from above command.
 
 
-### Dynamic check
+### 4. Dynamic check
 
 All the dynamic check files are stored at the same directory with other output files. For example, for movie use-case with bound 2, the dynamic check files are under directory: ```/home/user/CoordinationSynthesis/updated_run_movie/block/4/125/2_0/movie```
 
@@ -165,7 +183,7 @@ The dynamic check files names looks like: ```DynamicTest_1_41.cvc4```
 
 The first number represent the replica number, which is from 0 to 3. The second number is the identifer number, which indicats the order of the dynamic check regarding this replica only.
 
-### Baseline: Sequential Object (Section 7)
+### 5. Baseline: Sequential Object (Section 7)
 
 For the baseline performance mentioned in our paper, please go through the instructions for **The Recency-Aware Protocol**.
 
