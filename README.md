@@ -38,7 +38,6 @@ Number of cores: 8
 
 Frequency: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
 
-
 3. Import the virtual machine image on your local machine.
 
 ```
