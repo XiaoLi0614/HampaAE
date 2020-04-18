@@ -40,7 +40,7 @@ Fig.8 -> **5. Baseline: Sequential Object**
 
 ### 1. Static analysis test for conflict and dependency relations
 
-The first step is to conduct static analysis tests on the give use-cases (bankAccount and Movie Reservation). We have already translate the use-cases from our relational language (appendix p3-p4) to corresponding AST node specifications in java.
+The first step is to conduct static analysis tests on the give use-cases (Bank Account and Movie Reservation). We have already translate the use-cases from our relational language (appendix p3-p4) to corresponding AST node specifications in java.
 
 Go to the directory: ```/home/user/CoordinationSynthesis/static_analysis```
 
@@ -52,7 +52,7 @@ Run the bash file for bank use-case: ```BankStaticAnalysis.sh```
 ```
 ./BankStaticAnalysis.sh 
 ```
-You should see three tables, which are the conflict and dependency tables we claimed in the appendix P33.
+You should see three tables, which are the conflict and dependency tables we claimed in the **appendix P33**.
 
 Run the bash file for movie use-case: ```MovieStaticAnalysis.sh``` 
 
@@ -77,7 +77,7 @@ Run the bash file ```BoundInference.sh```
 ./BoundInference.sh
 ```
 
-The integer arguments are the bound for ```querySpace```, ```queryReservations``` and ```querySpaces``` respectively.
+The integer arguments are the bound for ```querySpace```, ```queryReservations``` and ```querySpaces``` respectively in the following command ( the content of ```BoundInference.sh```).
 
 ```
 java -jar /home/user/CoordinationSynthesis/bound_inference/CVCAutomation_Xiao_jar/CVCAutomation_Xiao.jar 3 4 6
