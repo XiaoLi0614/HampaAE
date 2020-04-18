@@ -12,7 +12,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. VirtualBox installed.
 
-2. Import the virtual machine image on your local machine.
+2. Download the virtualbox image from :
+```
+https://drive.google.com/file/d/1MrH-1O0AYLx_z4WZVKLHs6a6UoSNpGP0/view?usp=sharing
+```
+
+
+3. Import the virtual machine image on your local machine.
 
 ```
 vboxmanage import HampaAE.ova
