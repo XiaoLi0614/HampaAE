@@ -18,7 +18,7 @@ https://drive.google.com/file/d/1MrH-1O0AYLx_z4WZVKLHs6a6UoSNpGP0/view?usp=shari
 ```
 **The settings of the virtual machine are as below**
 
-Operating System: Ubuntu(64-bit)
+Operating System: Ubuntu 16.04(64-bit)
 
 Base memory: 4096 MB
 
@@ -27,8 +27,12 @@ Video Memory: 128MB
 Storage: 32GB
 
 Number of cores: 1
+
+User name: user
+
+Password: user
  
-**The System I tested and prepared my virtual machine on**
+**The system I tested and prepared my virtual machine on**
 
 Operating system: Ubuntu 16.04
 
